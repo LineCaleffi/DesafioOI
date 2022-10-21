@@ -1,0 +1,29 @@
+<br>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+      <h1 class="display-6">Lista de Produtos
+        <div class="row float-end"> <!-- alinha no canto direito -->
+        </div>
+      </h1>
+      <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+    </div>
+  <br>
+  <table class="table table-hover">
+    <thead>
+    <tr class="table-dark">
+        <th>ID</th>
+        <th>Nome do Produto</th>
+        <th>Usuário</th>
+        <th>Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of produtos">
+        <td>{{p.id}}</td>
+        <td>{{p.nomeProduto}}</td>
+        <td>{{p.usuario.nome}}</td>
+        <td>{{p.cliente.nome}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,49 @@
+<br>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Clientes</h1>
+    <p class="lead-1">Inclusão de novos Clientes</p>
+    <hr class="my-2">
+  </div>
+  <br>
+  <form [formGroup]="meuForm" (submit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label >Nome do Cliente</label>
+        <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome">
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label>CNPJ</label>
+        <input type="text" class="form-control" formControlName="cnpj" placeholder="Digite o CPf xxx.xxx.xxx-xx">
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['cnpj']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+    <br>
+
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label>Endereço do Cliente</label>
+        <input type="text" class="form-control" formControlName="endereco" placeholder="Digite seu endereço">
+        <small id="endereco" class="form-text text-muted"></small>
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['endereco']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+    <br>
+
+    <div class="gap-2 d-md-flex">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="reset" class="btn btn-primary">Limpar</button>
+      <a routerLink="/clientes" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>

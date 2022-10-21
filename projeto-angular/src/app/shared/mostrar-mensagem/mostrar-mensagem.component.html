@@ -1,0 +1,53 @@
+<div class="alert alert-danger" *ngIf="controles.status == 'INVALID' && controles.touched == true" role="alert">
+  {{ mensagem }}
+</div>
+
+<p *ngIf="debug == true">
+  Status : {{ controles.status }}
+</p>
+<p *ngIf="debug == true">
+  Erros : {{ controles.errors | json }}
+</p>
+<p *ngIf="debug == true">
+  Touched : {{ controles.touched  }}
+</p>
+
+<!-- reutilizando o component para não ficar repetindo códigos-->
+
+
+
+<!--
+  <div class="alert alert-danger" *ngIf="meuForm.controls['email'].status == 'INVALID' && meuForm.controls['email'].touched == true" role="alert">
+    Erro ao preencher o Email
+  </div>
+
+  <p>
+    Status : {{ meuForm.controls['email'].status }}
+  </p>
+  <p>
+    Erros : {{ meuForm.controls['email'].errors | json }}
+  </p>
+  <p>
+    Touched : {{ meuForm.controls['email'].touched  }}
+  </p>
+
+  <div class="alert alert-danger" *ngIf="meuForm.controls['password'].status == 'INVALID' && meuForm.controls['password'].touched == true" role="alert">
+    Erro ao preencher a senha
+  </div>
+
+  <p>
+    Status : {{ meuForm.controls['password'].status }}
+  </p>
+  <p>
+    Erros : {{ meuForm.controls['password'].errors | json }}
+  </p>
+  <p>
+    Touched : {{ meuForm.controls['password'].touched  }}
+  </p>
+-->
+
+
+<!--
+  div class="alert alert-danger" *ngIf="controles.status == 'INVALID' && controles.touched == true" role="alert"
+  Linha acima -> aparece uma mensagem de alerta quando o controle for invalido e quando o usuário sai do campo
+-->

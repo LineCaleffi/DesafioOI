@@ -1,0 +1,45 @@
+<br>
+<div class="container">
+  <div class="jumbotron"> <!-- Indica uma caixa grande para chamar a atenção extra para algum conteúdo -->
+    <h1 class="display-6">Lista de Usuários
+      <div class="row float-end"> <!-- alinha no canto direito -->
+        <button class="btn btn-outline-info" routerLink="/usuarios/criar">
+          <img class="criar" src="assets/img/criar.png" alt="criar">
+        </button>
+      </div>
+    </h1>
+    <hr class="my-2"> <!-- Adiciona uma linha abaixo para divisão -->
+  </div>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-dark">
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <td>Data de Nascimento</td>
+        <td>Endereco</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{u.id}}</td>
+        <td>{{u.nome}}</td>
+        <td>{{u.cpf}}</td>
+        <td>{{u.dataNasc}}</td>
+        <td>{{u.endereco}}</td>
+        <td>
+          <button class="btn btn-outline-info" [routerLink]="['/usuarios/editar',u.id]">
+            <img class="img" src="assets/img/editar.png" alt="img">
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-outline-danger" (click)="onDelete(u.id)">
+            <img class="img" src="assets/img/deletar.jpg" alt="img">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+</table>

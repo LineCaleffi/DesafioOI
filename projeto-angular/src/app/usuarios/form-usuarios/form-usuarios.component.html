@@ -1,0 +1,61 @@
+<br>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Usuários</h1>
+    <p class="lead-1">Inclusão de novos Usuários</p>
+    <hr class="my-2">
+  </div>
+  <br>
+  <form [formGroup]="meuForm" (submit)="onSubmit()">
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label >Nome do Usuário</label>
+        <input type="text" class="form-control" formControlName="nome" placeholder="Digite o nome">
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label>CPF do Usuário</label>
+        <input type="text" class="form-control" formControlName="cpf" placeholder="Digite o CPf xxx.xxx.xxx-xx">
+        <small id="cpf" class="form-text text-muted">Nunca compartilharemos seu CPF com mais ninguém.</small>
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+    <br>
+
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label>Data de Nascimento</label>
+        <input type="text" class="form-control" formControlName="dataNasc" placeholder="Exemplo: XX/XX/XXXX">
+        <small id="dataNasc" class="form-text text-muted"></small>
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      <div class="form-froup">
+        <label>Endereço do Usuário</label>
+        <input type="text" class="form-control" formControlName="endereco" placeholder="Digite seu endereço">
+        <small id="endereco" class="form-text text-muted"></small>
+      </div>
+      <app-mostrar-mensagem
+        [controles]="meuForm.controls['nome']" [mensagem]="'Erro ao preencher campo'">
+      </app-mostrar-mensagem>
+    </div>
+    <br>
+
+    <div class="gap-2 d-md-flex">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+      <button type="reset" class="btn btn-primary">Limpar</button>
+      <a routerLink="/usuarios" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+  </form>
+</div>
